@@ -8,6 +8,7 @@ import categoryRoutes from './routes/categoryRoutes.js'
 import productRoutes from './routes/productRoutes.js';
 import orderRoutes from './routes/orderRoutes.js';
 import addressRoutes from './routes/addressRoutes.js';
+import cartRoutes from './routes/cartRoutes.js';
 import cors from 'cors';
 // Environment Configuration
 config();
@@ -30,6 +31,7 @@ app.use('/api/v1',categoryRoutes);
 app.use('/api/v1/products/',productRoutes);
 app.use('/api/v1/addresses/',addressRoutes);
 app.use('/api/v1/orders/',orderRoutes);
+app.use('/api/v1/cart/',cartRoutes);
 
 
 // REST API

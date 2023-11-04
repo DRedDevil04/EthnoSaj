@@ -2,7 +2,8 @@ import mongoose from "mongoose";
 const orderSchema=new mongoose.Schema({
     status: {
         type: String,
-        default: "Placed"
+        default: "Placed",
+        enum: ["Not Process", "Processing", "Shipped", "Delivered", "cancel"]
     },
     cost: {
         type: Number,

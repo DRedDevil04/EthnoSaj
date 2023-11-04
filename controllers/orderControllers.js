@@ -13,7 +13,7 @@ export const createOrderController = async (req, res) => {
         if (!cost)
             return res.status(500).send({error:"Cost is required"});
         if( !deliverAdd)
-            return res.status(500).send({error:"Deliver Address is required"});
+            return res.status(500).send({error:"Delivery Address is required"});
         if (!rentDuration)
             return res.status(500).send({error:"Rent Duration is required"});    
         console.log(cost);

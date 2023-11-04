@@ -29,7 +29,12 @@ const productSchema= new mongoose.Schema({
         type:mongoose.ObjectId,
         ref:'Category',
         required:true
+    },
+    rentalP:{
+        type: Number,
+        required:true
     }
+
 },{timestamps:true});
 
 export default mongoose.model("Products",productSchema);

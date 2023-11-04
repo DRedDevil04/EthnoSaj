@@ -5,7 +5,7 @@ import fs from 'fs';
 
 export const createProductController = async (req, res) => {
     try {
-        const { name,quantity,category,description,price } = req.fields;
+        const { name,quantity,category,description,price,rentalP } = req.fields;
         const {photo}=req.files;
         //validation
         console.log(req.files);
@@ -18,6 +18,8 @@ export const createProductController = async (req, res) => {
             if (!description)
                 return res.status(500).send({error:"Description is required"});    
             if(!price)
+                return res.status(500).send({error:"Price is required"});
+            if(!rentalP)
                 return res.status(500).send({error:"Price is required"});   
             if( !photo && ! photo.size > 1000000)
                 return res.status(500).send({error:"Photo is required"}); 

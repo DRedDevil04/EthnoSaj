@@ -20,6 +20,7 @@ connectDB();
 const app=express();
 
 // Middlewares
+app.use(cors());
 app.use(json());
 app.use(morgan('dev'));
 app.use(express.json());

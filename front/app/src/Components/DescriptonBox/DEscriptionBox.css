@@ -13,9 +13,10 @@
     justify-content: center;
     font-size: 16px;
     font-weight: 600;
+    color: aquamarine;
     width: 171px;
     height: 70px;
-    border: 1px solid #d0d0d0;
+    border: 1px solid #00FFFF;
 }
 
 .descriptionbox-nav-box.fade{
@@ -26,7 +27,8 @@
 .descriptionbox-description{
     display: flex;
     flex-direction: column;
-    border: 1px solid #d0d0d0;
+    border: 1px solid #ca1a1a;
+    color: bisque;
     gap: 25px;
     padding: 48px;
     padding-bottom: 70px;

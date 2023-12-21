@@ -6,12 +6,15 @@ import Home  from './Pages/Home.jsx';
 import NavBar from './Components/NavBar.jsx';
 import Footer from './Components/Footer/Footer.jsx';
 import Registration from './Pages/Registration.jsx';
+import SignIn from './Pages/SignIn.jsx';
+import CatalogPage from './Pages/CatalogPage.jsx';
+import { useState } from 'react';
 
 
 function App() {
-  
+  const [jwt,setJWT]=useState("");
   return (
-
+  
   <div className='hehe'>
    <BrowserRouter>
      
@@ -21,6 +24,8 @@ function App() {
       <Route path='/' element={<Home/>} />
       <Route path='/home' element={<Home/>} />
       <Route path='/register' element={<Registration/>} />
+      <Route path='/login' element={<SignIn/>} />
+      <Route path='/catalog' element={<CatalogPage/>} />
       {/* <Route exact path="/cart" component={Cart} /> */}
     </Routes>
     <Footer/>

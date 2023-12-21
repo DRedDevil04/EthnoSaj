@@ -2,7 +2,7 @@ import categoryModel from "../models/categoryModel.js";
 
 import slugify from "slugify";
 
-
+import productModel from "../models/productModel.js";
 export const createCategoryController = async (req, res) => {
     try {
         const { name } = req.body;
@@ -37,3 +37,29 @@ export const createCategoryController = async (req, res) => {
     }
 
 };
+
+export const categoryListController = async (req, res) => {
+    try {
+      const perPage = 12;
+      const page = req.params.page ? req.params.page : 1;
+      const category = await categoryModel.findOne({ slug: req.params.slug });
+      const products = await productModel
+        .find({category})
+        .select("-photo")
+        .skip((page - 1) * perPage)
+        .limit(perPage)
+        .sort({ createdAt: -1 });
+      res.status(200).send({
+        success: true,
+        products,
+      });
+    } catch (error) {
+      console.log(error);
+      res.status(400).send({
+        success: false,
+        message: "error in per page ctrl",
+        error,
+      });
+    }
+  };
+

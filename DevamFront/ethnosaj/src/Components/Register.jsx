@@ -9,6 +9,7 @@ import FormBar from './FormBar';
 import SubmitForm from './SubmitForm';
 
 import axios from 'axios';
+import { useToast } from '@chakra-ui/react';
 
 function Register() {
     const [data,setData]=useState({
@@ -45,9 +46,18 @@ function Register() {
         e.preventDefault();
         const url=baseURL+"auth/register"
         try {
-            const res= axios.post(url,{name:"jd",email:"dd@gmail.com",password:"kjnasdj"}).then(res=>{
+            const res= axios.post(url,data).then(res=>{
                 console.log(res);
             })
+            if(res.status=="success"){
+                // useToast({
+                //     title:"Successful",
+                //     description:"Please Login",
+                //     status: "success",
+                //     duration: 9000,
+                //     isClosable: true,
+                // });
+            }
         } catch (error) {
             console.log(error);
 

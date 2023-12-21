@@ -18,7 +18,7 @@ function NavBar() {
           </div>
         <div className='col-xl-1 '>
         <a className='navbar-brand p-3 text-warning ' href="#"  style={{
-            fontFamily: 'palatino',
+            fontFamily: 'Cursive',
             fontSize:30,
             
             
